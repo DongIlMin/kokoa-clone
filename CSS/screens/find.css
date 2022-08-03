@@ -89,3 +89,19 @@
 .open-post__heart-count span{
     margin-left: 3px;
 }
+@keyframes hearBeat {
+    0%{
+        color: white;
+    }
+    50% {
+        color: tomato;
+        transform: scale(1.8);
+    }
+    100%{
+        color: white;
+    }
+}
+.fa-heart{
+    will-change: transform;
+    animation: hearBeat 0.5s linear infinite;
+}

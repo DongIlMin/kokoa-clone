@@ -34,7 +34,6 @@
     width: 100%;
     display:flex; 
     margin-bottom: 25px;
-
 }
 .message-row img {
     width: 70px;
@@ -87,6 +86,7 @@
     padding:5px 25px;
     align-items: center;
     box-sizing: border-box;
+    transition: transform 0.3s ease-in-out ;
 }
 .reply .reply__Column:first-child{
     width: 10%;
@@ -104,6 +104,7 @@
     border: var(--main-border);
     border-radius: 25px;
     box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
 }
 .reply__column:last-child > i,
 .reply__column:last-child button {
@@ -128,4 +129,42 @@
 }
 .reply__column button i {
     opacity: 1;
+}
+@keyframes receive {
+    from{
+        transform: translateX(-80px);
+        opacity: 0;
+    }
+    to{
+        transform: 0;
+        opacity: 1;
+    }
+}
+.message-row {
+    animation: receive 1s ease-in-out;
+}
+@keyframes send {
+    from{
+        transform: translate(100px);
+        opacity: 0;
+    }
+    to{
+        transform: 0;
+        opacity: 1;
+    }
+} 
+.message-row--own{
+    animation: send 2s ease-in-out;
+}
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-face-smile,
+.reply:focus-within button {
+    opacity: 0;
+}
+.reply input:focus {
+    width: 98vw;
+    transform: translateX(-13%) translateY(-80px);
+}
+.reply:focus-within {
+    transform: translateY(80px);
 }

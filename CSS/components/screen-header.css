@@ -15,3 +15,11 @@
 .screen-header__icons{
     position: relative;
 }
+@keyframes rotateGear {
+    100% {
+    transform: rotateZ(360deg);
+    }
+}
+.fa-gear {
+    animation: rotateGear 1s linear infinite;
+}
